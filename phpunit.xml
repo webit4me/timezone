@@ -1,0 +1,18 @@
+<phpunit bootstrap="phpunit.bootstrap.php">
+    <testsuites>
+        <testsuite name="directory-tree">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="false" >
+            <file>./src/TimeZone.php</file>
+            <file>./src/AbstractTimeZoneEnum.php</file>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-clover" target="./tests/logs/timezone.xml"/>
+    </logging>
+</phpunit>

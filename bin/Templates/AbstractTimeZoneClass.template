@@ -1,0 +1,19 @@
+<?php
+
+namespace WebIt4Me;
+
+/**
+ * Class AbstractTimeZone
+ *
+{property-reads}
+ * @package WebIt4Me
+ */
+class AbstractTimeZone {
+
+
+    public function __get($name)
+    {
+        $name = 'WebIt4Me\TimeZone\\' . $name;
+        return new $name;
+    }
+}

@@ -1,0 +1,20 @@
+<?php
+namespace WebIt4Me\TimeZone;
+
+use WebIt4Me\AbstractTimeZoneEnum;
+
+/**
+ * This is an auto generated enum class.
+ * Run bun\installer.php to regenerate
+ *
+ * Class {className}
+ * @package WebIt4Me\TimeZone
+ */
+class {className} extends AbstractTimeZoneEnum
+{
+
+    const ABBREVIATION = '{abbreviation}';
+    const NAME = '{name}';
+    const LOCATION = '{location}';
+    const OFFSET = '{offset}';
+}
