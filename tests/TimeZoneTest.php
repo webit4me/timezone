@@ -19,7 +19,7 @@ class TimeZoneTest extends \PHPUnit_Framework_TestCase
     public function test_getAllTimeZone()
     {
         $this->assertCount(
-            209,
+            208,
             $this->timeZone->getAllTimeZone()
         );
     }

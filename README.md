@@ -342,8 +342,7 @@ output:
 | TMT   | UTC +5:00          | Asia           | Turkmenistan Time                        | 
 | TOT   | UTC +13:00         | Pacific        | Tonga Time                               | 
 | TVT   | UTC +12:00         | Pacific        | Tuvalu Time                              |
-| ULAT  | UTC +8:00          | Asia           | Ulaanbaatar Time                         | 
-| UTC   | UTC                | Worldwide      | Coordinated Universal Time               | 
+| ULAT  | UTC +8:00          | Asia           | Ulaanbaatar Time                         |
 | UYST  | UTC -2:00          | South America  | Uruguay Summer Time                      | 
 | UYT   | UTC -3:00          | South America  | Uruguay Time                             | 
 | UZT   | UTC +5:00          | Asia           | Uzbekistan Time                          |
