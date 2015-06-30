@@ -2,7 +2,10 @@
 [![Coverage Status](https://coveralls.io/repos/webit4me/timezone/badge.svg?branch=master)](https://coveralls.io/r/webit4me/timezone?branch=master)
 # Timezone
 An object oriented representation of all timezones including their name, abbreviation , location and their time different
+## Requirement 
 
+    [webit4me/reader](https://github.com/webit4me/reader)
+    
 ## Installation
 
 ### Using Composer
