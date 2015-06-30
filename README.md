@@ -4,7 +4,7 @@
 An object oriented representation of all timezones including their name, abbreviation , location and their time different
 ## Requirement 
 
-    [webit4me/reader](https://github.com/webit4me/reader)
+[webit4me/reader](https://github.com/webit4me/reader) ([at packagist](https://packagist.org/packages/webit4me/reader))
     
 ## Installation
 
