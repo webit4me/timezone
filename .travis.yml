@@ -28,3 +28,6 @@ script:
 after_script:
   - ./vendor/bin/coveralls -c .coveralls.yml -v
 
+addons:
+    code_climate:
+        repo_token: 09e9d7a571b503fe6f37c7fc5ad6c32ac60f512efa1cc005863fc92db17f7fd1
