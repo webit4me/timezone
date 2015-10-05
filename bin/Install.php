@@ -2,7 +2,6 @@
 namespace WebIt4Me\TimeZone\Bin;
 
 use Composer\EventDispatcher\Event;
-use WebIt4Me\Reader\Csv\Loader;
 
 final class Install
 {
@@ -76,10 +75,10 @@ final class Install
     {
         $temp = file_get_contents(self::makePathRelative(self::$tempEnumPath));
 
-        $abbreviation = $timeZone['Abbreviation'];
-        $name = self::sanitize($timeZone['Name']);
-        $location = self::sanitize($timeZone['Location']);
-        $offset = $timeZone['Offset'];
+        $abbreviation = $timeZone[0];
+        $name = self::sanitize($timeZone[1]);
+        $location = self::sanitize($timeZone[2]);
+        $offset = $timeZone[3];
 
         $className = self::getClassName($abbreviation, $offset);
 
@@ -94,14 +93,14 @@ final class Install
 
     private static function getClassName($abbreviation, $offset)
     {
-        $className = $abbreviation;
+        $name = $abbreviation;
 
-        while (file_exists(self::makePathRelative(self::$timezoneDirPath) . '/' . $className . '.php')) {
+        while (file_exists(self::makePathRelative(self::$timezoneDirPath) . '/' . $name . '.php')) {
             $suffix = preg_replace('/(UTC\s[+-])([0-9]{1,2})(:)([0-9]{2})(.*)/', '$2$4', $offset);
-            $className = $className . $suffix;
+            $name = $name . $suffix;
         }
 
-        return $className;
+        return $name;
     }
 
 
@@ -125,13 +124,15 @@ final class Install
     private static function loadData()
     {
         if (is_null(self::$dataSource)) {
-
-            $rows = (new Loader(__DIR__ . self::$dataSourcePath))->readAll();
-
-            foreach ($rows as $row) {
-                self::$dataSource[] = $row->toArray();
+            $currentStatus = ini_get('auto_detect_line_endings');
+            ini_set('auto_detect_line_endings', true);
+            if (($handle = fopen(self::makePathRelative(self::$dataSourcePath), "r")) !== false) {
+                while (($row = fgetcsv($handle, 1000, ",")) !== false) {
+                    self::$dataSource[] = $row;
+                }
+                fclose($handle);
             }
-
+            ini_set('auto_detect_line_endings', $currentStatus);
         }
 
         return self::$dataSource;
