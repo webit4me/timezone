@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/webit4me/timezone.svg?branch=master)](https://travis-ci.org/webit4me/timezone)
 [![Coverage Status](https://coveralls.io/repos/webit4me/timezone/badge.svg?branch=master)](https://coveralls.io/r/webit4me/timezone?branch=master)
 [![Code Climate](https://codeclimate.com/github/webit4me/timezone/badges/gpa.svg)](https://codeclimate.com/github/webit4me/timezone)
+[![Test Coverage](https://codeclimate.com/github/webit4me/timezone/badges/coverage.svg)](https://codeclimate.com/github/webit4me/timezone/coverage)
+
 # Timezone
 An object oriented representation of all timezones including their name, abbreviation , location and their time different
 ## Requirement 
