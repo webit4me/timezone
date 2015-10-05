@@ -6,3 +6,4 @@ vendor/
 src/Timezone
 src/AbstractTimeZone.php
 tests/logs
+.idea
