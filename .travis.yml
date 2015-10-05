@@ -3,6 +3,11 @@ language: php
 php:
   - 5.5
 
+
+addons:
+    code_climate:
+        repo_token: 09e9d7a571b503fe6f37c7fc5ad6c32ac60f512efa1cc005863fc92db17f7fd1
+
 branches:
   except:
     - /^bugfix\/.*$/
@@ -27,9 +32,7 @@ script:
 
 after_script:
   - ./vendor/bin/coveralls -c .coveralls.yml -v
-  - CODECLIMATE_REPO_TOKEN=09e9d7a571b503fe6f37c7fc5ad6c32ac60f512efa1cc005863fc92db17f7fd1 ./vendor/bin/test-reporter
+  - CODECLIMATE_REPO_TOKEN=09e9d7a571b503fe6f37c7fc5ad6c32ac60f512efa1cc005863fc92db17f7fd1 ./vendor/bin/test-reporter --stdout > codeclimate.json
   - "curl -X POST -d @codeclimate.json -H 'Content-Type: application/json' -H 'User-Agent: Code Climate (PHP Test Reporter v0.1.1)' https://codeclimate.com/test_reports"
+  - cat codeclimate.json
 
-addons:
-    code_climate:
-        repo_token: 09e9d7a571b503fe6f37c7fc5ad6c32ac60f512efa1cc005863fc92db17f7fd1
