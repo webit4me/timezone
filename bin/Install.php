@@ -112,7 +112,7 @@ final class Install
             return $value;
         }, $names);
 
-        $t = end($propertyReads);
+        $last = end($propertyReads);
 
         $template = file_get_contents(self::makePathRelative(self::$tempClassPath));
 
