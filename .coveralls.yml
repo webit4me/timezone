@@ -1,4 +1,4 @@
 src_dir: ./
-coverage_clover: ./tests/logs/timezone.xml
-json_path: ./tests/logs/sm.json
+coverage_clover: ./build/logs/clover.xml
+json_path: ./build/logs/sm.json
 
