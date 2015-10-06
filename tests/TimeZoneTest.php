@@ -26,13 +26,14 @@ class TimeZoneTest extends \PHPUnit_Framework_TestCase
 
     public function test_findTimeZoneByName()
     {
-        $TZWithSummerInTheirName = $this->timeZone->findTimeZoneByName('Summer');
+        // Filtered list of all timezones with the word "summer" in their name
+        $filtered = $this->timeZone->findTimeZoneByName('Summer');
         $this->assertCount(
             30,
-            $TZWithSummerInTheirName
+            $filtered
         );
 
-        $this->assertContainsOnlyInstancesOf(AbstractTimeZoneEnum::class, $TZWithSummerInTheirName);
+        $this->assertContainsOnlyInstancesOf(AbstractTimeZoneEnum::class, $filtered);
     }
 
     /**
